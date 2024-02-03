@@ -1,11 +1,17 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
-import { useParams } from 'react-router-dom';
+import { useParams, useNavigate } from 'react-router-dom';
+
+import { useAuth } from '../../../AuthProvider';
 
 function ListingDetail() {
   const { id } = useParams();
   const [item, setItem] = useState(null);
   const [owner, setOwner] = useState(null);
+
+  const { userInfo, userToken } = useAuth();
+
+  const navigate = useNavigate();
 
   useEffect(() => {
     const fetchItem = async () => {
@@ -21,6 +27,18 @@ function ListingDetail() {
 
     fetchItem();
   }, [id]);
+
+  const sellItem = async () => {
+    try {
+      //TODO mark as sold instead
+      await axios.delete(`http://localhost:3001/items/${id}`, { headers: {
+        'Authorization': `Bearer ${userToken}`,
+      }});
+      navigate('/listings');
+    } catch (ex) {
+
+    }
+  };
 
   // Define theme colors and styles
   const themeColors = {
@@ -82,10 +100,18 @@ function ListingDetail() {
       <p style={styles.detail}><b>Category:</b> {item.category}</p>
 
       <p style={styles.detail}><b>Seller:</b> {owner.username}</p>
-      <p style={styles.detail}>Interested in buying?</p>
-      <p style={styles.detail}><b>Contact:</b> {owner.email}</p>
+      {userInfo && owner.email === userInfo.email 
+      ? 
+        <button onClick={() => sellItem()}>Mark as Sold</button>
+      :
+      <>
+        <p style={styles.detail}>Interested in buying?</p>
+        <p style={styles.detail}><b>Contact:</b> {owner.email}</p>
+      </>
+      }
     </div>
   );
 }
 
 export default ListingDetail;
+ 

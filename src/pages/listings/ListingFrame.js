@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from "react-router-dom";
 
 export default function ListingFrame({ item }) {
-    // Define theme colors and styles
+    // Define theme colors and styles 
     const themeColors = {
         yellow: '#FFD700',
         green: '#008000',
@@ -55,7 +55,6 @@ export default function ListingFrame({ item }) {
                         <h1 style={styles.title}>{item.title}</h1>
                         <h2 style={styles.price}>$ {item.price}</h2>
                     </div>
-                    <button className='h-10 justify-center'>Buy</button>
                 </div>
             </li>
         </Link>
