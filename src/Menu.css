@@ -12,6 +12,12 @@
     
   }
 
+  .menu-item {
+    margin-bottom: 10px; /* Add some spacing between items */
+    border-bottom: 1px solid #ccc; /* Add a grey bottom border to separate items */
+    padding-bottom: 10px; /* Add padding to the bottom of each item */
+  }
+
   .menu-container:hover {
     transform: scale(1.05); /* Add a zoom-in effect on hover */
   }
