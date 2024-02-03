@@ -15,11 +15,12 @@ export const AuthProvider = ({ children }) => {
                 const config = {
                     headers: { Authorization: `Bearer ${token}` }
                 };
-                const response = await axios.get('http://localhost:3001/api/user', config);
+                // Ensure this endpoint matches your server setup
+                const response = await axios.get('http://localhost:3001/user/profile', config);
                 setUserInfo(response.data);
                 setIsAuthenticated(true);
                 setUserToken(token);
-            } catch (error) {
+                 } catch (error) {
                 console.error('Error fetching user info:', error);
                 logout();
             }
@@ -31,17 +32,17 @@ export const AuthProvider = ({ children }) => {
     }, []);
 
     const login = (token) => {
+        localStorage.setItem('token', token);
         setIsAuthenticated(true);
         setUserToken(token);
-        localStorage.setItem('token', token);
         fetchUserInfo();
     };
 
     const logout = () => {
+        localStorage.removeItem('token');
         setIsAuthenticated(false);
         setUserToken(null);
         setUserInfo(null);
-        localStorage.removeItem('token');
     };
 
     return (
