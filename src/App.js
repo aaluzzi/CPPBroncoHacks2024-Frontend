@@ -5,6 +5,7 @@ import Listings from './pages/listings/Listings';
 import SignIn from './pages/signin/SignIn.js';
 import { AuthProvider } from './AuthProvider.js';
 import ListingDetail from './pages/listings/id/ListingDetail.js';
+import SignUp from './pages/signup/SignUp.js';
 
 function App() {
   return (
@@ -16,6 +17,7 @@ function App() {
             <Route path="/listings" element={<Listings />} />
             <Route path="/listings/:id" element={<ListingDetail />} />
             <Route path="/signin" element={<SignIn />} />
+            <Route path="/signup" element={<SignUp />} />
           </Routes>
         </Layout>
       </AuthProvider>
