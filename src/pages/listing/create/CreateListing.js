@@ -14,20 +14,20 @@ function CreateListing() {
     const handleSubmit = async (event) => {
         event.preventDefault();
         setError('');
+        const images = [...image];
         try {
-            const response = await axios.post('http://localhost:3001/item/create', {
+            const response = await axios.post('http://localhost:3001/items/create', {
                 title,
                 description,
                 price,
-                image
+                images,
+                category: 'any'
             }, {
                 headers: {
                     'Authorization': `Bearer ${localStorage.getItem('token')}`
                 }
             });
-            if (response.status === 201) {
-                navigate("/");
-            }
+            navigate(`/listing/${response.data.item._id}`);
         } catch (error) {
             if (error.response) {
                 setError(error.response.data || 'An error occurred. Please try again.');

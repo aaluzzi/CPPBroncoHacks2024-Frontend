@@ -24,6 +24,9 @@ function Menu() {
           <li>
             <Link to={`/listings/${userInfo?.username}`}>My Listings</Link>
           </li>
+          <li>
+            <Link to={`/listing/create`}>Create Listing</Link>
+          </li>
           <li className='self-baseline'>
             <button onClick={() => {
               logout();
