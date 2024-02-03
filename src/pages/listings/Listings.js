@@ -42,7 +42,6 @@ export default function Listings() {
     return (
         <div style={styles.container} className="flex flex-col min-h-screen">
             <SearchBar />
-            <div className='overflow-y-scroll'>
                 <h1 style={styles.header}>Listings</h1>
                 <ul className="flex flex-wrap justify-center gap-5 p-4">
                     {listings.map((listing) => (
@@ -50,6 +49,5 @@ export default function Listings() {
                 ))}
             </ul>
             </div>
-        </div>
     );
 }
