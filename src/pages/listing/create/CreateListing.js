@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
+import './CreateListing.css'; // Import the CSS file
 
 function CreateListing() {
     const [title, setTitle] = useState('');
@@ -38,58 +39,15 @@ function CreateListing() {
         }
     };
 
-    // Define theme colors and styles
-    const themeColors = {
-        yellow: '#FFD700',
-        green: '#008000',
-    };
-
-    const styles = {
-        form: {
-            padding: '20px',
-            display: 'flex',
-            flexDirection: 'column',
-            gap: '10px',
-            backgroundColor: 'gainsboro', // Light background for better readability
-            borderRadius: '8px',
-            boxShadow: '0 4px 8px rgba(0, 0, 0, 0.1)', // Adds a subtle shadow
-            maxWidth: '500px',
-            margin: '20px auto', // Centers the form
-           
-
-        },
-        input: {
-            padding: '10px',
-            borderRadius: '5px',
-            border: `1px solid ${themeColors.green}`, // Green border for inputs
-        },
-        button: {
-            padding: '10px',
-            borderRadius: '5px',
-            backgroundColor: themeColors.green, // Green background for button
-            color: 'white',
-            border: 'none',
-            cursor: 'pointer',
-        },
-        error: {
-            color: 'red',
-            textAlign: 'center',
-        },
-        title: {
-            textAlign: 'center',
-            color: themeColors.green, // Yellow color for title
-        }
-    };
-
     return (
-        <form style={styles.form} onSubmit={handleSubmit}>
-            <h1 style={styles.title}>Create Listing</h1>
-            <input style={styles.input} required type="text" value={title} onChange={(e) => setTitle(e.target.value)} placeholder="Title" />
-            <input style={styles.input} required type="text" value={description} onChange={(e) => setDescription(e.target.value)} placeholder="Description" />
-            <input style={styles.input} required type="file" onChange={(e) => setImage(e.target.files[0])} />
-            <input style={styles.input} required type="number" value={price} onChange={(e) => setPrice(e.target.value)} placeholder="Price" min="1" max="99999"/>
-            {error && <div style={styles.error}>{error}</div>}
-            <button style={styles.button} type="submit">Create Listing</button>
+        <form className="form" onSubmit={handleSubmit}>
+            <h1 className="title">Create Listing</h1>
+            <input className="input" required type="text" value={title} onChange={(e) => setTitle(e.target.value)} placeholder="Title" />
+            <input className="input" required type="text" value={description} onChange={(e) => setDescription(e.target.value)} placeholder="Description" />
+            <input className="input" required type="file" onChange={(e) => setImage(e.target.files[0])} />
+            <input className="input" required type="number" value={price} onChange={(e) => setPrice(e.target.value)} placeholder="Price" min="1" max="99999"/>
+            {error && <div className="error">{error}</div>}
+            <button className="button" type="submit">Create Listing</button>
         </form>
     );
 }
