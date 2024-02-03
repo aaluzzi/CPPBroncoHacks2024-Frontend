@@ -53,7 +53,7 @@ export default function ListingFrame({ item }) {
                         <h1 style={styles.title}>{item.title}</h1>
                         <h2 style={styles.price}>$ {item.price}</h2>
                     </div>
-                    <button className='p-4 h-10 align-middle'>Buy</button>
+                    <button className='h-10 justify-center'>Buy</button>
                 </div>
             </li>
         </Link>

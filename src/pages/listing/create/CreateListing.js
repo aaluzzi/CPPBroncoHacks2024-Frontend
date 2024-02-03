@@ -50,12 +50,12 @@ function CreateListing() {
             display: 'flex',
             flexDirection: 'column',
             gap: '10px',
-            backgroundColor: '#f0f8ff', // Light background for better readability
+            backgroundColor: 'gainsboro', // Light background for better readability
             borderRadius: '8px',
             boxShadow: '0 4px 8px rgba(0, 0, 0, 0.1)', // Adds a subtle shadow
             maxWidth: '500px',
             margin: '20px auto', // Centers the form
-            backgroundImage: 'url(https://files.123freevectors.com/wp-content/original/169498-shiny-abstract-black-green-and-yellow-background-vector.jpg)',
+           
 
         },
         input: {
@@ -77,7 +77,7 @@ function CreateListing() {
         },
         title: {
             textAlign: 'center',
-            color: themeColors.yellow, // Yellow color for title
+            color: themeColors.green, // Yellow color for title
         }
     };
 
