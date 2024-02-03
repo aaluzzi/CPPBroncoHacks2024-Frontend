@@ -27,7 +27,7 @@ export default function Listings() {
     // Inline styles for theme-specific elements
     const styles = {
         header: {
-            color: themeColors.green,
+            color: '#1e293b',
             padding: '20px',
             fontSize: '1.5rem',
             fontWeight: 'bold',
