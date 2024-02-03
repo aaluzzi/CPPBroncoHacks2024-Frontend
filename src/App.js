@@ -4,7 +4,7 @@ import Home from './pages/home/Home';
 import Listings from './pages/listings/Listings';
 import SignIn from './pages/signin/SignIn.js';
 import { AuthProvider } from './AuthProvider.js';
-import ListingDetail from './pages/listings/:id/ListingDetail.js';
+import ListingDetail from './pages/listings/id/ListingDetail.js';
 
 function App() {
   return (
