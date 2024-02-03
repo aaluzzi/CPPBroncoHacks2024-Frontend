@@ -5,12 +5,15 @@ import { useParams } from 'react-router-dom';
 function ListingDetail() {
   const { id } = useParams();
   const [item, setItem] = useState(null);
+  const [owner, setOwner] = useState(null);
 
   useEffect(() => {
     const fetchItem = async () => {
       try {
-        const response = await axios.get(`http://localhost:3001/items/${id}`);
-        setItem(response.data);
+        const itemResponse = await axios.get(`http://localhost:3001/items/${id}`);
+        setItem(itemResponse.data);
+        const userResponse = await axios.get(`http://localhost:3001/user/profile/${itemResponse.data.sellerId}`);
+        setOwner(userResponse.data);
       } catch (err) {
         console.error('Error fetching item details:', err);
       }
@@ -38,7 +41,7 @@ function ListingDetail() {
       boxShadow: '0 4px 8px rgba(0, 0, 0, 0.1)', // Optional: adds a subtle shadow for depth
       width: '80%', // Adjust width as per your layout needs
       maxWidth: '800px', // Ensures the container is not too wide on larger screens
-      margin: '20px auto', // Centers the container with margin on top and bottom
+      margin: '20px auto', // Centers the ;lzcontainer with margin on top and bottom
     },
     image: {
       maxWidth: '100%',
@@ -63,7 +66,7 @@ function ListingDetail() {
     },
   };
   
-  if (!item) {
+  if (!item || !owner) {
     return <div>Loading...</div>;
   }
 
@@ -77,7 +80,10 @@ function ListingDetail() {
       <p style={styles.description}>{item.description}</p>
       <p style={styles.detail}><b>Price:</b> ${item.price}</p>
       <p style={styles.detail}><b>Category:</b> {item.category}</p>
-      {/* Add more item details here */}
+
+      <p style={styles.detail}><b>Seller:</b> {owner.username}</p>
+      <p style={styles.detail}>Interested in buying?</p>
+      <p style={styles.detail}><b>Contact:</b> {owner.email}</p>
     </div>
   );
 }
