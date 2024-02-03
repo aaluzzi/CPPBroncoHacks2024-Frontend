@@ -32,25 +32,26 @@ function ListingDetail() {
       alignItems: 'center',
       marginTop: '20px',
       color: themeColors.green, // Green text color
-      backgroundColor: '#f0f8ff', // Light background color for better readability
+      backgroundColor: 'gainsboro',
       padding: '20px',
       borderRadius: '8px',
       boxShadow: '0 4px 8px rgba(0, 0, 0, 0.1)', // Optional: adds a subtle shadow for depth
       width: '80%', // Adjust width as per your layout needs
       maxWidth: '800px', // Ensures the container is not too wide on larger screens
       margin: '20px auto', // Centers the container with margin on top and bottom
-      backgroundImage: 'url(https://files.123freevectors.com/wp-content/original/169498-shiny-abstract-black-green-and-yellow-background-vector.jpg)',
     },
     image: {
-      maxWidth: '600px',
+      maxWidth: '100%',
       borderRadius: '8px',
       marginBottom: '20px',
+      aspectRatio: '1',
+      objectFit: 'cover',
     },
     title: {
       fontSize: '2em',
       fontWeight: 'bold',
       marginBottom: '10px',
-      color: themeColors.yellow, // Yellow title color
+      color: themeColors.green, // Yellow title color
     },
     description: {
       fontSize: '1.2em',

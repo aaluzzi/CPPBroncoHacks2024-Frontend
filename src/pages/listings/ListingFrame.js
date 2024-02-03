@@ -48,8 +48,13 @@ export default function ListingFrame({ item }) {
         <Link to={`/listing/${item._id}`} style={styles.link}>
             <li style={styles.listItem} key={item.id}>
                 <img style={styles.image} src={item.images[0]} alt={item.title} />
-                <h1 style={styles.title}>{item.title}</h1>
-                <h2 style={styles.price}>$ {item.price}</h2>
+                <div className='flex w-full justify-between'>
+                    <div className='flex items-start flex-col'>
+                        <h1 style={styles.title}>{item.title}</h1>
+                        <h2 style={styles.price}>$ {item.price}</h2>
+                    </div>
+                    <button className='p-4 h-10 align-middle'>Buy</button>
+                </div>
             </li>
         </Link>
     );
