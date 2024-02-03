@@ -11,6 +11,7 @@ function Menu() {
 
   if (isAuthenticated) {
     return (
+      
       <nav className="menu-container">
         <ul className="menu-list">
           <li className="menu-item">
