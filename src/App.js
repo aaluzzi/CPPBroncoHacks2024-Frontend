@@ -6,6 +6,7 @@ import SignIn from './pages/signin/SignIn.js';
 import { AuthProvider } from './AuthProvider.js';
 import ListingDetail from './pages/listings/id/ListingDetail.js';
 import SignUp from './pages/signup/SignUp.js';
+import CreateListing from './pages/listing/create/CreateListing.js';
 
 function App() {
   return (
@@ -16,6 +17,7 @@ function App() {
             <Route exact path="/" element={<Home />} />
             <Route path="/listings" element={<Listings />} />
             <Route path="/listings/:id" element={<ListingDetail />} />
+            <Route path="/listing/create" element={<CreateListing />} />
             <Route path="/signin" element={<SignIn />} />
             <Route path="/signup" element={<SignUp />} />
           </Routes>
