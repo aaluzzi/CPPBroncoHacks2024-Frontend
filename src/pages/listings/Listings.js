@@ -3,7 +3,10 @@ import SearchBar from "../../SearchBar";
 import { useState, useEffect } from 'react';
 import ListingFrame from '../listings/ListingFrame'
 
+import { useAuth } from '../../AuthProvider';
+
 export default function Listings({ sellerId }) {
+    const { isAuthenticated } = useAuth();
     const [listings, setListings] = useState([]);
 
     const fetchListings = async (title) => {
@@ -27,7 +30,7 @@ export default function Listings({ sellerId }) {
     const themeColors = {
         yellow: '#FFD700',
         green: '#008000',
-    };
+    }; 
 
     // Inline styles for theme-specific elements
     const styles = {
@@ -44,6 +47,12 @@ export default function Listings({ sellerId }) {
             backgroundColor: 'white', // Consistent with the header for a cohesive look
         },
     };
+
+    if (!isAuthenticated) {
+        return (
+            <div style={styles.container} className="flex flex-col min-h-screen justify-center align-center">Please sign in to view listings.</div>
+        );
+    }
 
     return (
         <div style={styles.container} className="flex flex-col min-h-screen">
