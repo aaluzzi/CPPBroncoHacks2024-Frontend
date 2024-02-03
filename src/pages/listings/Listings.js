@@ -1,13 +1,23 @@
 import { Link } from "react-router-dom";
+import axios from 'axios';
 import SearchBar from "../../SearchBar";
+import { useState, useEffect } from 'react';
 
 export default function Listings() {
-     //TODO fetch from backend properly
-    const listings = [
-        { id: 'asd23-asnnsdfb-a244', title: 'Five-Star Green Binder' },
-        { id: 'gnnSadf-adfnn-afga$Dlf', title: 'Cuetec Avid Chroma Hydra' },
-      ];
-    
+    const [listings, setListings] = useState([]);
+    useEffect(() => {
+      const fetchListings = async () => {
+          try {
+              const response = await axios.get('http://localhost:3001/items');
+              setListings(response.data);
+          } catch (err) {
+          }
+      };
+
+      fetchListings();
+  }, []); // The empty array ensures this effect runs once on mount
+
+
       return (
         <div>
           <SearchBar />
@@ -15,7 +25,7 @@ export default function Listings() {
           <ul>
             {listings.map((listing) => (
               <li key={listing.id}>
-                <Link to={`/listing/${listing.id}`}>{listing.title}</Link>
+                <Link to={`/listing/${listing._id}`}>{listing.title}</Link>
               </li>
             ))}
           </ul>
