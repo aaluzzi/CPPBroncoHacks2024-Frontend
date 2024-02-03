@@ -5,17 +5,18 @@ import ListingFrame from '../listings/ListingFrame'
 
 export default function Listings() {
     const [listings, setListings] = useState([]);
-    useEffect(() => {
-        const fetchListings = async () => {
-            try {
-                const response = await axios.get('http://localhost:3001/items');
-                setListings(response.data);
-            } catch (err) {
-                console.error('Failed to fetch listings:', err);
-            }
-        };
 
-        fetchListings();
+    const fetchListings = async (title) => {
+        try {
+            const response = await axios.get(`http://localhost:3001/items?title=${title}`);
+            setListings(response.data);
+        } catch (err) {
+            console.error('Failed to fetch listings:', err);
+        }
+    }
+
+    useEffect(() => {
+        fetchListings('');
     }, []); // The empty array ensures this effect runs once on mount
 
     // Define theme colors
@@ -42,7 +43,7 @@ export default function Listings() {
 
     return (
         <div style={styles.container} className="flex flex-col min-h-screen">
-            <SearchBar />
+            <SearchBar fetchListings={fetchListings} />
             <h1 style={styles.header}>Listings</h1>
             <ul className="flex flex-wrap justify-center gap-5 p-4">
                 {listings.map((listing) => (

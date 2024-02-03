@@ -1,6 +1,7 @@
 import React from 'react';
 
-function SearchBar(){
+function SearchBar({ fetchListings }) {
+
     const themeColors = {
         yellow: '#FFD700',
         green: '#008000',
@@ -33,7 +34,7 @@ function SearchBar(){
 
     return (
         <div style={styles.searchBar}>
-            <input
+            <input onChange={(e) => fetchListings((e.target.value))}
                 style={styles.input}
                 placeholder='Search'
                 className='rounded-lg'
