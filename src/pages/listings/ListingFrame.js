@@ -14,7 +14,7 @@ export default function ListingFrame({ item }) {
         },
         listItem: {
             padding: '20px',
-            width: '200px', // Adjust width as needed
+            width: '250px', // Adjust width as needed
             backgroundColor: 'gainsboro',
             borderRadius: '8px',
             boxShadow: '0 4px 8px rgba(0, 0, 0, 0.1)',
@@ -35,12 +35,12 @@ export default function ListingFrame({ item }) {
         title: {
             fontSize: '1.2rem',
             fontWeight: 'bold',
-            color: themeColors.green, // Uses the theme green for titles
+            color: '#1e293b', // Uses the theme green for titles
             margin: '10px 0 5px 0',
         },
         price: {
             fontSize: '1rem',
-            color: themeColors.green, // Uses the theme yellow for price
+            color: '#1e293b', // Uses the theme yellow for price
         }
     };
 
