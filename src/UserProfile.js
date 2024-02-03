@@ -11,8 +11,8 @@ function UserProfile() {
 
   return (
     <div className="user-profile-container">
-      <h2 className="profile-header">{userInfo.username}</h2>
-      <h2 className="profile-header">{userInfo.email}</h2>
+      <h2 className="profile-header">Username: {userInfo.username}</h2>
+      <h2 className="profile-header">Email: {userInfo.email}</h2>
     </div>
   );
 }
