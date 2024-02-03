@@ -4,7 +4,7 @@ import Menu from './Menu';
 
 export default function Layout({ children }) {
   return (
-    <div>
+    <div className='flex h-screen'>
       <Menu />
       <main>{children}</main>
     </div>
