@@ -11,7 +11,7 @@ function Menu() {
         <li>
           <Link to="/listings">Listings</Link>
         </li>
-        <li className='place-self-center'>
+        <li className='self-baseline'>
           <Link to="/signin">signin</Link>
         </li>
       </ul>
