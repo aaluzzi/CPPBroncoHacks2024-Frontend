@@ -14,8 +14,8 @@ export default function ListingFrame({ item }) {
         },
         listItem: {
             padding: '20px',
-            width: '300px', // Adjust width as needed
-            backgroundColor: 'white',
+            width: '200px', // Adjust width as needed
+            backgroundColor: 'gainsboro',
             borderRadius: '8px',
             boxShadow: '0 4px 8px rgba(0, 0, 0, 0.1)',
             margin: '10px',
@@ -24,7 +24,7 @@ export default function ListingFrame({ item }) {
             flexDirection: 'column',
             alignItems: 'center',
             gap: '10px',
-            backgroundImage: 'url(https://files.123freevectors.com/wp-content/original/169498-shiny-abstract-black-green-and-yellow-background-vector.jpg)',
+            
         },
         image: {
             width: '100%', // Ensures image covers the width
@@ -40,7 +40,7 @@ export default function ListingFrame({ item }) {
         },
         price: {
             fontSize: '1rem',
-            color: themeColors.yellow, // Uses the theme yellow for price
+            color: themeColors.green, // Uses the theme yellow for price
         }
     };
 

@@ -33,24 +33,23 @@ export default function Listings() {
             fontWeight: 'bold',
             textAlign: 'center',
             backgroundColor: '#f0f8ff', // A light background color to complement the theme
-            backgroundImage: 'url(https://files.123freevectors.com/wp-content/original/169498-shiny-abstract-black-green-and-yellow-background-vector.jpg)',
         },
         container: {
             backgroundColor: '#f0f8ff', // Consistent with the header for a cohesive look
-            backgroundImage: 'url(https://files.123freevectors.com/wp-content/original/169498-shiny-abstract-black-green-and-yellow-background-vector.jpg)',
-
         },
     };
 
     return (
         <div style={styles.container} className="flex flex-col min-h-screen">
             <SearchBar />
-            <h1 style={styles.header}>Listings</h1>
-            <ul className="flex flex-wrap justify-center gap-5 p-4">
-                {listings.map((listing) => (
+            <div className='overflow-y-scroll'>
+                <h1 style={styles.header}>Listings</h1>
+                <ul className="flex flex-wrap justify-center gap-5 p-4">
+                    {listings.map((listing) => (
                     <ListingFrame key={listing._id} item={listing} />
                 ))}
             </ul>
+            </div>
         </div>
     );
 }
