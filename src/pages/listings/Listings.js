@@ -15,7 +15,7 @@ export default function Listings() {
           <ul>
             {listings.map((listing) => (
               <li key={listing.id}>
-                <Link to={`/listings/${listing.id}`}>{listing.title}</Link>
+                <Link to={`/listing/${listing.id}`}>{listing.title}</Link>
               </li>
             ))}
           </ul>
