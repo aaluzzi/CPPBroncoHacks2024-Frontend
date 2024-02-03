@@ -26,6 +26,7 @@ export default function ListingFrame({ item }) {
             gap: '10px',
             
         },
+
         image: {
             width: '100%', // Ensures image covers the width
             aspectRatio: '1', // Keeps images square
@@ -46,7 +47,7 @@ export default function ListingFrame({ item }) {
 
     return (
         <Link to={`/listing/${item._id}`} style={styles.link}>
-            <li style={styles.listItem} key={item.id}>
+            <li class="listing-container"style={styles.listItem} key={item.id}>
                 <img style={styles.image} src={item.images[0]} alt={item.title} />
                 <div className='flex w-full justify-between'>
                     <div className='flex items-start flex-col'>
