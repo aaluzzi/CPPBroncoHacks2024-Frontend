@@ -3,13 +3,17 @@ import SearchBar from "../../SearchBar";
 import { useState, useEffect } from 'react';
 import ListingFrame from '../listings/ListingFrame'
 
-export default function Listings() {
+export default function Listings({ sellerId }) {
     const [listings, setListings] = useState([]);
 
     const fetchListings = async (title) => {
         try {
             const response = await axios.get(`http://localhost:3001/items?title=${title}`);
-            setListings(response.data);
+            if (sellerId) {
+                setListings(response.data.filter(item => item.sellerId === sellerId));
+            } else {
+                setListings(response.data);
+            }
         } catch (err) {
             console.error('Failed to fetch listings:', err);
         }

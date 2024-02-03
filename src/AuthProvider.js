@@ -18,6 +18,7 @@ export const AuthProvider = ({ children }) => {
                 // Ensure this endpoint matches your server setup
                 const response = await axios.get('http://localhost:3001/user/profile', config);
                 setUserInfo(response.data);
+                console.log(response.data)
                 setIsAuthenticated(true);
                 setUserToken(token);
                  } catch (error) {
