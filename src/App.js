@@ -7,7 +7,8 @@ import ListingDetail from './pages/listing/id/ListingDetail.js';
 import SignUp from './pages/signup/SignUp.js';
 import CreateListing from './pages/listing/create/CreateListing.js';
 import MyListings from './pages/listings/MyListings';
-import UserProfile from './UserProfile.js'; // Adjust the import path as needed
+import UserProfile from './UserProfile'; // Adjust the import path as needed
+import React from 'react';
 
 function App() {
   return (
