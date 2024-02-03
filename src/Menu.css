@@ -18,9 +18,6 @@
     padding-bottom: 10px; /* Add padding to the bottom of each item */
   }
 
-  .menu-container:hover {
-    transform: scale(1.05); /* Add a zoom-in effect on hover */
-  }
 
   .menu-list {
     list-style: none;
