@@ -7,7 +7,7 @@ export default function Layout({ children }) {
     <div className='flex h-screen'>
       <Menu />
       
-      <main className="flex w-full justify-center items-center">{children}</main>
+      <main className="h-full w-full">{children}</main>
     </div>
   );
 }

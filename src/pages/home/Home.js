@@ -1,5 +1,10 @@
+import React from 'react';
+import SearchBar from '../../SearchBar';
+
 export default function Home() {
     return (
-        <h1>Home Page</h1>
+        <div className='flex justify-center'>
+            <SearchBar />
+        </div>
     );
 }
