@@ -35,11 +35,13 @@ export default function ListingFrame({ item }) {
         title: {
             fontSize: '1.2rem',
             fontWeight: 'bold',
+            fontFamily: 'Segoe UI',
             color: '#1e293b', // Uses the theme green for titles
             margin: '10px 0 5px 0',
         },
         price: {
             fontSize: '1rem',
+            fontFamily: 'Segoe UI',
             color: '#1e293b', // Uses the theme yellow for price
         }
     };

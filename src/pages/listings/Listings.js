@@ -30,6 +30,7 @@ export default function Listings() {
             color: '#1e293b',
             padding: '20px',
             fontSize: '2rem',
+            fontFamily: 'Segoe UI',
             fontWeight: 'bold',
             textAlign: 'center',
             backgroundColor: 'white', // A light background color to complement the theme
