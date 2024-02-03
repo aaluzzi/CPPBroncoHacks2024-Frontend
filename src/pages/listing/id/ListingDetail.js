@@ -21,7 +21,7 @@ function ListingDetail() {
   }, []);
 
   return (
-    <div>
+    <div >
       <h2>Listing Details</h2>
       <div>{item.title}</div>
       <div>{item.description}</div>
