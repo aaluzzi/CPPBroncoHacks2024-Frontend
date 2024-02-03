@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import SearchBar from "../../SearchBar";
 
 export default function Listings() {
      //TODO fetch from backend properly
@@ -9,6 +10,7 @@ export default function Listings() {
     
       return (
         <div>
+          <SearchBar />
           <h1 className="text-xl font-bold">Listings</h1>
           <ul>
             {listings.map((listing) => (
