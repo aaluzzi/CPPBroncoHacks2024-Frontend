@@ -1,27 +1,49 @@
-/* MyListings.css */
+/* MyListings.css - Enhanced Styles */
 .listings-container {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: start;
-    gap: 20px; /* Adjust based on desired spacing */
-    padding: 20px;
-    animation: fadeIn 1s ease-out;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px; /* Fine-tuned spacing */
+  padding: 20px;
+  animation: fadeIn 1s ease-out;
+  background-color: white; /* Background consistency */
+  border-radius: 15px; /* Soften edges */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+  margin: 20px auto; /* Center container with some margin */
+  max-width: 90%; /* Limiting max width for better alignment */
+}
 
-  }
-  
-  .listings-title {
-    text-align: center;
-    animation: slideDown 0.5s ease-out;
-    
-  }
-  
-  @keyframes fadeIn {
-    from { opacity: 0; }
-    to { opacity: 1; }
-  }
-  
-  @keyframes slideDown {
-    from { transform: translateY(-20px); opacity: 0; }
-    to { transform: translateY(0); opacity: 1; }
-  }
-  
+.listings-title {
+  text-align: center;
+  animation: slideDown 0.5s ease-out;
+  color: #1e293b; /* Heading color for contrast */
+  font-size: 2.5rem; /* More prominent size */
+  font-weight: bold; /* Bold for emphasis */
+  margin: 40px 0 20px; /* Adjusted spacing for visual separation */
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes slideDown {
+  from { transform: translateY(-20px); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
+}
+
+/* Additional stylings for no listings message */
+.no-listings {
+  text-align: center;
+  color: #757575;
+  font-size: 1.25rem;
+  margin-top: 50px;
+}
+
+/* Enhancing the overall page background and layout */
+body {
+  background-color: #f4f4f4; /* Soft background for contrast with white containers */
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  margin: 0;
+  padding: 20px 0; /* Padding at the top and bottom */
+}

@@ -18,18 +18,19 @@ function SignIn() {
     const styles = {
         
         form: {
-            
             padding: '20px',
             display: 'flex',
             flexDirection: 'column',
             gap: '10px',
-            backgroundColor: '#f0f8ff',
-            borderRadius: '8px',
-            boxShadow: '0 4px 8px rgba(0, 0, 0, 0.1)',
-            maxWidth: '400px',
+            backgroundColor: '#bbf7d0',
+            borderRadius: '15px',
+            boxShadow: '0 10px 20px rgba(0, 0, 0, 0.2)',
+            width: '30%',
+            maxWidth: '320px',
+            height: '45%',
+            maxHeight: '1200px',
             margin: '0 auto',
-            transition: 'transform 0.3s ease-in-out', // Smooth transition for hover effect
-            backgroundImage: 'url(https://png.pngtree.com/background/20220731/original/pngtree-abstract-racing-stripes-with-yellow-green-white-black-and-grey-background-picture-image_1897480.jpg)',
+            transition: 'transform 0.3s ease-in-out' // Smooth transition for hover effect
 
         },
         button: {
@@ -78,7 +79,7 @@ function SignIn() {
                 style={styles.form} 
                 onSubmit={handleSubmit}
             >
-                <h1 className="font-bold text-xl" style={{ color: themeColors.green }}>Sign In</h1>
+                <h1 className="font-bold text-xl" style={{ color: themeColors.green, textAlign: 'center'}}>Sign In</h1>
                 <input className="p-2 rounded-md" required type="email" value={email} onChange={(e) => setEmail(e.target.value)} placeholder="Email" />
                 <input className="p-2 rounded-md" required type="password" value={password} onChange={(e) => setPassword(e.target.value)} placeholder="Password" />
                 {error && <div style={styles.error}>{error}</div>}

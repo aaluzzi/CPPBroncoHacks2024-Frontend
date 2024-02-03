@@ -29,13 +29,13 @@ export default function Listings() {
         header: {
             color: '#1e293b',
             padding: '20px',
-            fontSize: '1.5rem',
+            fontSize: '2rem',
             fontWeight: 'bold',
             textAlign: 'center',
-            backgroundColor: '#f0f8ff', // A light background color to complement the theme
+            backgroundColor: 'white', // A light background color to complement the theme
         },
         container: {
-            backgroundColor: '#f0f8ff', // Consistent with the header for a cohesive look
+            backgroundColor: 'white', // Consistent with the header for a cohesive look
         },
     };
 

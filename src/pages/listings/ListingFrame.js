@@ -16,7 +16,7 @@ export default function ListingFrame({ item }) {
             padding: '20px',
             width: '250px', // Adjust width as needed
             backgroundColor: 'gainsboro',
-            borderRadius: '8px',
+            borderRadius: '15px',
             boxShadow: '0 4px 8px rgba(0, 0, 0, 0.1)',
             margin: '10px',
             transition: 'transform 0.2s', // Smooth transition for hover effect

@@ -1,0 +1,54 @@
+/* CreateListing.css */
+.form {
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    background-color: #ffffff; /* Brighter background for contrast with inputs */
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15); /* More pronounced shadow for depth */
+    max-width: 500px;
+    width: 100%; /* Responsive width */
+    margin: 40px auto; /* More vertical spacing */
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* Consistent font family */
+    background-image: none; /* Remove background image for clarity */
+    border: 2px solid rgba(0, 128, 0, 0.1); /* Subtle border */
+  }
+  
+  .input, .button {
+    padding: 12px;
+    border-radius: 5px;
+    border: 2px solid #dcdcdc; /* Lighter border for inputs */
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* Consistent font family */
+  }
+  
+  .input {
+    background-color: #f9f9f9; /* Slightly off-white for input background */
+    margin-bottom: 10px; /* Ensure spacing between fields */
+  }
+  
+  .button {
+    background-color: #008000; /* Consistent green color */
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s; /* Smooth transition for hover */
+  }
+  
+  .button:hover {
+    background-color: #006400; /* Darker green on hover for interaction feedback */
+  }
+  
+  .error {
+    color: #ff4500; /* More noticeable error color */
+    margin-top: 10px;
+    font-size: 0.9rem;
+  }
+  
+  .title {
+    text-align: center;
+    color: #ffd700; /* Consistent yellow color */
+    font-size: 2rem;
+    margin-bottom: 20px;
+  }
+  
