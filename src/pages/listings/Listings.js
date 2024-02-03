@@ -50,7 +50,7 @@ export default function Listings({ sellerId }) {
 
     if (!isAuthenticated) {
         return (
-            <div style={styles.container} className="flex flex-col min-h-screen justify-center align-center">Please sign in to view listings.</div>
+            <div style={styles.container} className="flex flex-col min-h-screen w-full p-4 align-center">Please sign in to view listings.</div>
         );
     }
 
