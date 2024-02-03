@@ -1,31 +1,32 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import logo from './images/LOGO.png'
-
+import logo from './images/LOGO.png';
 import { useAuth } from './AuthProvider';
 import { useNavigate } from 'react-router-dom';
-
+import './Menu.css'; // Create a Menu.css file for styling
 
 function Menu() {
   const { isAuthenticated, userInfo, logout } = useAuth();
-
   const navigate = useNavigate();
 
   if (isAuthenticated) {
     return (
-      <nav className="p-4 bg-gray-200 hover:w-40 w-16 truncate transition-all ease-out duration-300">
-        <ul className="flex flex-col gap-7 p-3 h-full">
+      <nav className="menu-container">
+        <ul className="menu-list">
           <li>
-            <img className='w-10 h-10' src={logo} ></img>
+            <img className='logo' src={logo} alt="Logo" />
           </li>
           <li>
             <Link to="/listings">Home</Link>
           </li>
           <li>
-            <Link to={`/listings/${userInfo?.username}`}>My Listings</Link>
+            <Link to="/my/listings">My Listings</Link>
           </li>
           <li>
-            <Link to={`/listing/create`}>Create Listing</Link>
+            <Link to="/listing/create">Create Listing</Link>
+          </li>
+          <li>
+            <Link to="/user/profile">My Profile</Link>
           </li>
           <li className='self-baseline'>
             <button onClick={() => {
@@ -38,10 +39,10 @@ function Menu() {
     );
   } else {
     return (
-      <nav className="p-4 bg-gray-200 hover:w-40 w-16 truncate transition-all ease-out duration-300">
-        <ul className="flex flex-col gap-7 p-3 h-full">
+      <nav className="menu-container">
+        <ul className="menu-list">
           <li>
-            <img className='w-10 h-10' src={logo} ></img>
+            <img className='logo' src={logo} alt="Logo" />
           </li>
           <li>
             <Link to="/listings">Home</Link>
@@ -53,7 +54,6 @@ function Menu() {
       </nav>
     );
   }
-  
 }
 
 export default Menu;

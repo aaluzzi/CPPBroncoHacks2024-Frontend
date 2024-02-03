@@ -1,4 +1,3 @@
-
 import axios from 'axios';
 import SearchBar from "../../SearchBar";
 import { useState, useEffect } from 'react';
@@ -7,28 +6,51 @@ import ListingFrame from '../listings/ListingFrame'
 export default function Listings() {
     const [listings, setListings] = useState([]);
     useEffect(() => {
-      const fetchListings = async () => {
-          try {
-              const response = await axios.get('http://localhost:3001/items');
-              setListings(response.data);
-          } catch (err) {
-          }
-      };
+        const fetchListings = async () => {
+            try {
+                const response = await axios.get('http://localhost:3001/items');
+                setListings(response.data);
+            } catch (err) {
+                console.error('Failed to fetch listings:', err);
+            }
+        };
 
-      fetchListings();
-  }, []); // The empty array ensures this effect runs once on mount
+        fetchListings();
+    }, []); // The empty array ensures this effect runs once on mount
 
+    // Define theme colors
+    const themeColors = {
+        yellow: '#FFD700',
+        green: '#008000',
+    };
 
-      return (
-        <div className="flex flex-col bg-gray-100">
-          <SearchBar />
-          <h1 className="text-xl font-bold p-5">Listings</h1>
-          <ul className="flex flex-wrap w-full gap-5 p-4">
-            {listings.map((listing) => (
-              <ListingFrame item={listing} />
-              
-            ))}
-          </ul>
+    // Inline styles for theme-specific elements
+    const styles = {
+        header: {
+            color: themeColors.green,
+            padding: '20px',
+            fontSize: '1.5rem',
+            fontWeight: 'bold',
+            textAlign: 'center',
+            backgroundColor: '#f0f8ff', // A light background color to complement the theme
+            backgroundImage: 'url(https://files.123freevectors.com/wp-content/original/169498-shiny-abstract-black-green-and-yellow-background-vector.jpg)',
+        },
+        container: {
+            backgroundColor: '#f0f8ff', // Consistent with the header for a cohesive look
+            backgroundImage: 'url(https://files.123freevectors.com/wp-content/original/169498-shiny-abstract-black-green-and-yellow-background-vector.jpg)',
+
+        },
+    };
+
+    return (
+        <div style={styles.container} className="flex flex-col min-h-screen">
+            <SearchBar />
+            <h1 style={styles.header}>Listings</h1>
+            <ul className="flex flex-wrap justify-center gap-5 p-4">
+                {listings.map((listing) => (
+                    <ListingFrame key={listing._id} item={listing} />
+                ))}
+            </ul>
         </div>
-      );
+    );
 }

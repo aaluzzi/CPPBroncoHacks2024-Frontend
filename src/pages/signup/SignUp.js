@@ -2,7 +2,6 @@ import React, { useState } from 'react';
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
 
-
 function SignUp() {
     const [email, setEmail] = useState('');
     const [username, setUsername] = useState('');
@@ -10,6 +9,52 @@ function SignUp() {
     const [error, setError] = useState('');
 
     const navigate = useNavigate();
+
+    // Theme colors
+    const themeColors = {
+        yellow: '#FFD700',
+        green: '#008000',
+    };
+
+    // Inline styles
+    const styles = {
+        form: {
+            padding: '20px',
+            display: 'flex',
+            flexDirection: 'column',
+            gap: '10px',
+            backgroundColor: '#f0f8ff', // Light background for better readability
+            borderRadius: '8px',
+            boxShadow: '0 4px 8px rgba(0, 0, 0, 0.1)',
+            maxWidth: '400px',
+            margin: '20px auto', // Centers the form
+            transition: 'transform 0.3s ease-in-out', // Smooth transition for hover effect
+            backgroundImage: 'url(https://png.pngtree.com/background/20220731/original/pngtree-abstract-racing-stripes-with-yellow-green-white-black-and-grey-background-picture-image_1897480.jpg)',
+
+        },
+        input: {
+            padding: '10px',
+            borderRadius: '5px',
+            border: `1px solid ${themeColors.green}`, // Green border for inputs
+        },
+        button: {
+            padding: '10px',
+            borderRadius: '5px',
+            backgroundColor: themeColors.green, // Green background for the button
+            color: 'white',
+            border: 'none',
+            cursor: 'pointer',
+            transition: 'background-color 0.3s, transform 0.3s', // Transition effects
+        },
+        error: {
+            color: 'red',
+            textAlign: 'center',
+        },
+        title: {
+            color: themeColors.green, // Green color for title
+            textAlign: 'center',
+        },
+    };
 
     const handleSubmit = async (event) => {
         event.preventDefault();
@@ -19,32 +64,24 @@ function SignUp() {
         }
         setError('');
         try {
-            const response = await axios.post('http://localhost:3001/signup', {
-                username,
-                email,
-                password
-            });
+            const response = await axios.post('http://localhost:3001/signup', { username, email, password });
             if (response.status === 201) {
                 navigate("/signin");
             }
         } catch (error) {
-            if (error.response) {
-                setError(error.response.data || 'An error occurred. Please try again.');
-            } else {
-                setError('Network error. Please try again later.');
-            }
+            setError('Invalid credentials or an error occurred. Please try again.');
         }
     };
 
     return (
-        <div className='flex items-center justify-center h-full'>
-            <form  className="p-8 flex flex-col gap-4 bg-gray-200 max-w-64 rounded-lg" onSubmit={handleSubmit}>
-                <h1 className="font-bold text-xl">Create Account</h1>
-                <input className="p-1 rounded-md" required type="email" value={email} onChange={(e) => setEmail(e.target.value)} placeholder="Email" />
-                <input className="p-1 rounded-md" required type="text" value={username} onChange={(e) => setUsername(e.target.value)} placeholder="Username" />
-                <input className="p-1 rounded-md" required type="password" value={password} onChange={(e) => setPassword(e.target.value)} placeholder="Password" />
-                {error && <div style={{ color: 'red' }}>{error}</div>}
-                <button className="p-1 rounded-md bg-blue-500 h-8 text-white" type="submit">Sign Up</button>
+        <div className='flex items-center justify-center h-screen'>
+            <form style={styles.form} onSubmit={handleSubmit}>
+                <h1 style={styles.title}>Create Account</h1>
+                <input style={styles.input} required type="email" value={email} onChange={(e) => setEmail(e.target.value)} placeholder="CPP Email" />
+                <input style={styles.input} required type="text" value={username} onChange={(e) => setUsername(e.target.value)} placeholder="Username" />
+                <input style={styles.input} required type="password" value={password} onChange={(e) => setPassword(e.target.value)} placeholder="Password" />
+                {error && <div style={styles.error}>{error}</div>}
+                <button style={styles.button} onMouseEnter={e => e.target.style.backgroundColor = themeColors.yellow} onMouseLeave={e => e.target.style.backgroundColor = themeColors.green} type="submit">Sign Up</button>
             </form>
         </div>
     );

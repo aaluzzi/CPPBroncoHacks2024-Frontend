@@ -1,0 +1,27 @@
+/* MyListings.css */
+.listings-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: start;
+    gap: 20px; /* Adjust based on desired spacing */
+    padding: 20px;
+    animation: fadeIn 1s ease-out;
+
+  }
+  
+  .listings-title {
+    text-align: center;
+    animation: slideDown 0.5s ease-out;
+    
+  }
+  
+  @keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+  }
+  
+  @keyframes slideDown {
+    from { transform: translateY(-20px); opacity: 0; }
+    to { transform: translateY(0); opacity: 1; }
+  }
+  

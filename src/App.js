@@ -6,6 +6,8 @@ import { AuthProvider } from './AuthProvider.js';
 import ListingDetail from './pages/listing/id/ListingDetail.js';
 import SignUp from './pages/signup/SignUp.js';
 import CreateListing from './pages/listing/create/CreateListing.js';
+import MyListings from './pages/listings/MyListings';
+import UserProfile from './UserProfile.js'; // Adjust the import path as needed
 
 function App() {
   return (
@@ -13,13 +15,14 @@ function App() {
       <AuthProvider>
         <Layout>
           <Routes>
-            <Route exact path="/" element={<Listings />} />
+            <Route path="/" element={<Listings />} />
             <Route path="/listings" element={<Listings />} />
-            <Route path="/listings/:username" element={<Listings />} />
+            <Route path="/my/listings" element={<MyListings />} />
             <Route path="/listing/:id" element={<ListingDetail />} />
             <Route path="/listing/create" element={<CreateListing />} />
             <Route path="/signin" element={<SignIn />} />
             <Route path="/signup" element={<SignUp />} />
+            <Route path="/user/profile" element={<UserProfile />} />
           </Routes>
         </Layout>
       </AuthProvider>

@@ -1,0 +1,58 @@
+/* Menu.css */
+
+.menu-container {
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    transition: all 0.3s ease;
+    position: relative; /* Add position relative to enable child animation */
+    
+  }
+
+  .menu-container:hover {
+    transform: scale(1.05); /* Add a zoom-in effect on hover */
+  }
+
+  .menu-list {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+  
+  .logo {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+  }
+  
+  .menu-list a {
+    color: green;
+    text-decoration: none;
+    font-size: 18px;
+    transition: color 0.3s ease;
+  }
+  
+  .menu-list a:hover {
+    color: yellow;
+    transform: translateX(5px); /* Add a horizontal slide effect on hover */
+  }
+  
+  button {
+    background-color: green;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease; /* Add transform animation */
+  }
+  
+  button:hover {
+    background-color: yellow;
+    transform: scale(1.05); /* Add a zoom-in effect on hover */
+  }
